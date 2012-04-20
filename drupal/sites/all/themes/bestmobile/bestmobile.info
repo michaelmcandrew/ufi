@@ -1,0 +1,60 @@
+
+name = Best Mobile
+description = Premium Drupal theme by <a href="http://www.themesnap.com">ThemeSnap.com</a>.
+screenshot = screenshot.png
+version = "7.x-1.0"
+core = 7.x
+
+settings[tm_value_theme_1] = bright
+settings[tm_value_theme_2] = full
+settings[tm_value_theme_3] = right
+settings[tm_value_theme_4] = tiny
+settings[tm_value_theme_5] = description
+settings[tm_value_theme_6] = tiny
+
+regions[sidebar_phone] = Sidebar Phone
+regions[sidebar_top_menu] = Sidebar Top Menu
+regions[sidebar_top_ad] = Sidebar Ad
+regions[sidebar_navgation_menu] = Sidebar Navgation Menu
+regions[content] = Content
+regions[sidebar_right] = Sidebar
+
+regions[sidebar_slideshow] = Sidebar Slide Show (Home)
+regions[sidebar_banner_1] = Sidebar Banner 1 (Home)
+regions[sidebar_banner_2] = Sidebar Banner 2 (Home)
+regions[sidebar_fourcolumns] = Sidebar Four Columns (Home)
+
+regions[footer_one] = Footer One
+regions[footer_two] = Footer Two
+regions[footer_three] = Footer Three
+regions[footer_four] = Footer Four
+regions[footer_copyright] = Footer Copyright
+
+stylesheets[all][] = css/fancybox.css
+stylesheets[all][] = css/flexslider.css
+stylesheets[all][] = css/base.css
+stylesheets[all][] = css/structure.css
+stylesheets[all][] = css/parts.css
+stylesheets[all][] = css/widgets.css
+stylesheets[all][] = css/color.css
+
+stylesheets[all][] = js/jquery.fancybox.css
+stylesheets[all][] = js/jquery.fancybox-buttons.css
+stylesheets[all][] = js/jquery.fancybox-thumbs.css
+
+scripts[] = js/jquery.cookie.min.js
+scripts[] = js/jquery.fancybox.min.js
+scripts[] = js/jquery.fancybox-buttons.js
+scripts[] = js/jquery.fancybox-thumbs.js
+
+
+scripts[] = js/jquery.flexslider.min.js
+scripts[] = js/jquery.jflickrfeed.min.js
+scripts[] = js/jquery.masonry.min.js
+scripts[] = js/jquery.tweet.min.js
+scripts[] = js/jquery.yaselect.min.js
+scripts[] = js/prefixfree.min.js
+scripts[] = js/website.config.js
+scripts[] = js/website.js
+scripts[] = js/widgets.js
+scripts[] = js/plusone.js

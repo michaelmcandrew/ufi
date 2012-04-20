@@ -1,0 +1,300 @@
+/**
+ * @package Website_Template
+ * @since Website 1.0
+ */
+
+/* =Widget
+----------------------------------------------------------------------------- */
+.widget {
+	display: block;
+}
+#aside .widget {
+	border-top-width: 1px;
+	border-top-style: dotted;
+	padding: 14px 0 20px;
+}
+#aside .widget:first-child {
+	border-top-width: 0;
+	padding-top: 0;
+}
+#aside-bottom .widget {
+	font-size: 11px;
+	line-height: 20px;
+	float: left;
+	margin-left: 20px;
+}
+#aside-bottom .widget:first-child {
+	margin: 0;
+}
+#aside-bottom .widget.fixed {
+	width: 220px;
+}
+#aside-bottom .widget.small {
+	width: 220px;
+}
+#aside-bottom .widget.medium {
+	width: 460px;
+}
+#aside-bottom .widget.large {
+	width: 700px;
+}
+#aside-bottom .widget.full {
+	width: 100%;
+}
+#aside .widget h1 {
+	font: normal 28px/28px Rokkitt, "Times New Roman";
+}
+#aside-bottom .widget h1 {
+	font-weight: normal;
+	text-transform: uppercase;
+}
+#aside .widget p,
+#aside .widget ul,
+#aside .widget ol,
+#aside .widget form {
+	margin-top: 10px;
+}
+#aside-bottom .widget p,
+#aside-bottom .widget ul,
+#aside-bottom .widget ol,
+#aside-bottom .widget form {
+	margin-top: 6px;
+}
+.widget p:first-child,
+.widget ul:first-child,
+.widget ol:first-child,
+.widget form:first-child,
+.widget ul ul,
+.widget ul ol,
+.widget ol ol,
+.widget ol ul {
+	margin-top: 0 !important;
+}
+.widget ul {
+	list-style: disc inside;
+}
+.widget ul ul {
+	margin-left: 13px;
+}
+#aside .widget ul.fancy,
+#aside .widget ul.fancy ul {
+	list-style: none;
+	margin-left: 0;
+}
+#aside .widget ul.fancy li {
+	border-top-width: 1px;
+	border-style: dotted;
+	font-size: 11px;
+	line-height: 30px;
+	padding-left: 24px;
+}
+#aside .widget > ul.fancy > li:last-child {
+	border-bottom-width: 1px;
+}
+#aside .widget ul.fancy a {
+	border-bottom: none;
+}
+
+@media only screen and (max-width: 979px) { /* <= Tablet */
+	#aside-bottom .widget.small {
+		width: 140px;
+	}
+	#aside-bottom .widget.medium {
+		width: 300px;
+	}
+	#aside-bottom .widget.large {
+		width: 460px;
+	}
+}
+@media only screen and (max-width: 739px) { /* <= Mobile */
+	#aside .widget {
+		padding: 9px 0 15px;
+	}
+	#aside-bottom .widget {
+		float: none;
+		margin-left: 0;
+		margin-top: 20px;
+		width: 100% !important;
+	}
+}
+
+/* =Social widget
+----------------------------------------------------------------------------- */
+#aside .widget-social {
+	padding-top: 0;
+}
+.widget-social li {
+	font: normal 22px/22px Rokkitt, "Times New Roman" !important;
+	display: block;
+	margin-top: 5px;
+	overflow: hidden;
+}
+.widget-social li a {
+	border-bottom: none !important;
+	background-position: left center;
+	background-repeat: no-repeat;
+	display: block;
+	padding: 5px 0 5px 40px;
+	overflow: hidden;
+}
+.widget-social .horizontal {
+	margin-left: -5px;
+}
+.widget-social .horizontal li {
+	float: left;
+	margin-left: 5px;
+	width: 32px;
+	height: 32px;
+}
+.widget-social .horizontal li a {
+	padding: 0 0 0 40px;
+	width: 0;
+	height: 100%;
+}
+
+/* =Search widget
+----------------------------------------------------------------------------- */
+#aside .widget-search {
+	padding-top: 20px;
+}
+.widget-search .input {
+	margin-right: 29px;
+}
+.widget-search input {
+	display: block;
+}
+.widget-search input[type="text"] {
+	font-family: Georgia, serif;
+	font-style: italic;
+	width: 173px;
+}
+.widget-search input[type="submit"] {
+	-ms-filter: "";
+	border: none;
+	background-color: transparent !important;
+	background-repeat: no-repeat !important;
+	float: right;
+	margin-right: 5px;
+	padding: 0;
+	width: 17px;
+	height: 28px;
+}
+#aside .widget-search input[type="submit"] {
+	background-position: -68px center;
+}
+#aside .widget-search input[type="submit"]:hover {
+	background-position: -85px center;
+}
+#aside-bottom .widget-search input[type="submit"] {
+	background-position: -34px center;
+}
+#aside-bottom .widget-search input[type="submit"]:hover {
+	background-position: -51px center;
+}
+
+/* =Twitter widget
+----------------------------------------------------------------------------- */
+.widget-twitter ul {
+	list-style: none;
+}
+#aside .widget-twitter ul {
+	margin-top: 10px !important;
+}
+#aside-bottom .widget-twitter ul {
+	margin-top: 6px !important;
+	margin-right: 20px;
+}
+.widget-twitter li {
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	text-indent: 30px;
+	margin-top: 20px;
+}
+.widget-twitter li:first-child {
+	margin-top: 0;
+}
+#aside .widget-twitter li {
+	background-position: -940px 0;
+}
+.widget-twitter small {
+	font-size: 9px;
+}
+.widget-twitter small a:hover {
+	border-bottom: none;
+}
+
+@media only screen and (max-width: 979px) { /* <= Tablet */
+	#aside-bottom .widget-twitter ul {
+		margin-right: 0;
+	}
+}
+
+/* =Flickr widget
+----------------------------------------------------------------------------- */
+.widget-flickr ul {
+	position: relative;
+	margin: 8px -4px -4px;
+}
+#aside .widget-flickr {
+	margin-bottom: -4px;
+}
+#aside .widget-flickr ul {
+	margin-top: 4px;
+}
+.widget-flickr li {
+	display: block;
+	float: left;
+	margin: 4px;
+}
+.widget-flickr img {
+	border-width: 1px;
+	border-style: solid;
+	display: block;
+	padding: 3px;
+	width: 41px;
+	height: 41px;
+}
+
+@media only screen and (max-width: 739px) { /* <= Mobile */
+	.widget-flickr li:nth-child(n+6) {
+		display: none;
+	}
+}
+@media only screen and (max-width: 319px) { /* <= Mini */
+	.widget-flickr li:nth-child(n+5) {
+		display: none;
+	}
+}
+
+/* =Contact widget
+----------------------------------------------------------------------------- */
+.widget-contact input[type="text"] {
+	width: 65%;
+}
+.widget-contact textarea {
+	height: 100px;
+}
+
+/* =Info widget
+----------------------------------------------------------------------------- */
+.widget-info h1 {
+	font: normal 38px/37px Rokkitt, "Times New Roman";
+	text-transform: none !important;
+	margin-bottom: 4px;
+}
+.widget-info h2 {
+	font: italic 16px/22px Georgia, serif;
+	text-transform: none;
+}
+
+/* =Custom widget
+----------------------------------------------------------------------------- */
+#aside .widget-custom {
+	padding-top: 20px;
+}
+
+@media only screen and (max-width: 739px) { /* <= Mobile */
+	#aside .widget {
+		padding-top: 15px;
+	}
+}

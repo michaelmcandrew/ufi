@@ -1,0 +1,76 @@
+/**
+ * Handpicked styles that are OK to be parsed by color module
+ * Color module cannot parse the full style.css because the color-matching
+ * code in color.module is error-prone and suffers from rounding problems
+ * resulting in colors mixing up and red-shifting of graytones.
+ * NOTE: colors are case sensitive for color.module
+ */
+
+body {
+  background: #ffffff;
+}
+
+.mast {
+  -moz-box-shadow: #aaaaaa 0 3px 3px;
+  -webkit-box-shadow: #aaaaaa 0 3px 3px;
+  -o-box-shadow: #aaaaaa 0 3px 3px;
+  box-shadow: #aaaaaa 0 3px 3px;
+}
+
+body,
+body .masthead .primary-menu li a,
+nav.block ul li a,
+.page .node .node-title a,
+.page .node .byline ul li a {
+  color:#8c8c8c;
+}
+
+.mast a,
+h1, h2, h3, h4, h5, h6,
+.pager-current,
+.pager :active,
+body .masthead .primary-menu li a.active,
+body .masthead .primary-menu li a:hover,
+body .masthead .primary-menu li a:focus,
+ul.primary a:hover,
+ul.primary a:focus {
+  color: #ff9900;
+}
+
+body .masthead a.logo,
+.button,
+.mast .tweets-pulled-listing .cycle-prev,
+.mast .tweets-pulled-listing .cycle-next,
+.mast .tweets-pulled-listing .prev,
+.mast .tweets-pulled-listing .next,
+.mast a:hover,
+.mast a:focus {
+  background-color: #ff9900;
+}
+
+.button {
+  /* These will be ignored by color module because it bugs out on 3letter color codes */
+  color:#fff;
+}
+.button a {
+  /* These will be ignored by color module because it bugs out on 3letter color codes */
+  color:#fff;
+}
+
+::selection {
+  background-color: #ff9900;
+}
+
+::-moz-selection {
+  background-color: #ff9900;
+}
+
+.button {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffa400), color-stop(100%, #ff8e00));
+  background-image: -webkit-linear-gradient(#ffa400, #ff8e00);
+  background-image: -moz-linear-gradient(#ffa400, #ff8e00);
+  background-image: -o-linear-gradient(#ffa400, #ff8e00);
+  background-image: -ms-linear-gradient(#ffa400, #ff8e00);
+  background-image: linear-gradient(#ffa400, #ff8e00);
+  -pie-background: linear-gradient(#ffa400, #ff8e00);
+}

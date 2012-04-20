@@ -1,0 +1,1032 @@
+/**
+Main stylesheet for Deviant by www.SooperThemes.com
+Author: Jurriaan Roelofs
+
+TABLE OF CONTENTS:
+0. Variables and Mixins
+1. Typography
+2. Layout styling
+3. Styling per region
+4. Form styling
+5. Drupal Elements
+6. Drupal Modules
+
+*/
+
+/**
+ * [ 0 ] VARIABLES AND MIXINS
+ */
+
+@import "compass/css3";
+@import "base";
+@import "respondr-base";
+
+// Adding overflow:hidden to fix layout problem caused by clearfix
+// Without this fix, region-clearfixes create a gap below the container
+.region:after {
+  overflow:hidden;
+}
+
+/**
+ * [ 1 ] TYPOGRAPHY
+ */
+
+body {
+  font:12px/1.4em verdana, arial, helvetica, 'Helvetica Neue', sans;
+  color:#8c8c8c;
+}
+
+.mast a {
+  text-decoration:none;
+  color:#ff9900;
+  padding-left:2px;
+  padding-right:2px;
+  @include single-transition(all,200ms);
+  &:hover, &:focus {
+    background-color:#ff9900;
+    color:#fff;
+    text-decoration:none;
+    padding-left:2px;
+    padding-right:2px;
+    @include border-radius(3px);
+  }
+  &.img-link {
+    &:hover, &:focus {
+      background-color:transparent;
+    }
+  }
+}
+ul.primary a {
+  padding: 0 15px;
+  &:hover, &:focus {
+    padding: 0 15px;
+    color:#ff9900;
+  }
+}
+
+p {
+  margin-bottom:0.75em;
+}
+
+article .content a {
+  text-decoration:underline;
+}
+
+h1 {
+  font-size:28px;
+  line-height:1.2em;
+  text-transform:uppercase;
+}
+
+h1,
+.block-action {
+  color:#666;
+}
+
+h2,
+.primary-menu {
+  font-size:14px;
+  text-transform:uppercase;
+}
+
+h3 {
+  font-size:13px;
+  text-transform:uppercase;
+}
+
+h4, h5, h6 {
+  font-size:13px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color:#ff9900;
+}
+
+blockquote {
+  font-family: georgia;
+  font-size:21px;
+  font-style:italic;
+  line-height:1.2em;
+  padding:25px 0;
+  cite {
+    float:right;
+    font-size:14px;
+  }
+}
+
+::selection {
+	background:#ff9900;
+	color:#fff;
+}
+::-moz-selection {
+	background:#ff9900;
+	color:#fff;
+}
+
+
+
+/**
+ * Drupal elements
+ */
+
+/* Square up AA visual bootstrap */
+
+.secondary li a,
+.primary li a,
+.block ul.pager,
+.form-text,
+textarea,
+fieldset,
+input[type=button],
+input[type=reset],
+input[type=submit],
+button,
+input.form-submit,
+.form-actions a,
+.form-actions a:visited,
+.button,
+a.button,
+a.button:visited {
+  @include border-radius(0);
+  color:inherit;
+  a {
+    color:inherit;
+  }
+}
+
+.block ul.pager {
+  float:right;
+}
+
+/* Give pager minimal styling */
+
+.page .block ul.pager {
+  border:none;
+  @include box-shadow(none);
+  li,a {
+    background-image:none;
+    border:none;
+    display:inline;
+    padding:0;
+    margin:0;
+    float:none;
+  }
+  a,
+  .pager-current {
+    // Make the clickable area larger for touchscreen users
+    padding:4px 8px;
+  }
+}
+
+.pager-current,
+.pager :active {
+  color:#ff9900;
+}
+
+/* Button styles */
+
+.button {
+  @include box-shadow(#555 1px 1px 1px);
+  padding:1px 5px;
+  color:#fff;
+  display:inline-block;
+  font-family:georgia;
+  font-style:italic;
+  font-weight:normal;
+  @include text-shadow(rgba(0,0,0,0.3) 1px 1px 1px);
+  background-color: #ff9900;
+  background-repeat:no-repeat;
+  @include background-image(linear-gradient(#ffa400, #ff8e00));
+  -pie-background: linear-gradient(#ffa400, #ff8e00);
+  position:relative;
+  a {
+    color:#fff;
+    opacity:0.97;
+    font-size:80%;
+    &:hover, &:focus {
+      font-size: 90%;
+    }
+  }
+}
+
+
+/**
+ * [ 1 ] Layout
+ */
+
+body {
+  background:#fff;
+}
+
+.mast {
+  background:#fff;
+  padding:1px 0; // Don't collapse margins
+  @include box-shadow(#aaa 0 3px 3px);
+  &.wrap-footer,
+  &.wrap-footer-extra  {
+    padding:0;
+  }
+}
+
+.page {
+  background:#fff url('../images/hr.png') repeat-x bottom;
+  paddint-top:1px;
+  padding-bottom:15px;
+  padding-left:15px;
+  padding-right:15px;
+  // Make sure the extra padding outside our grid doesn't overflow the viewport
+  // (responsive padding) @see body.ie7, body.ie8
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// Ie<=8 doesn't understand the border-box attr so we degrate to regular padding
+html.ie7 .page,
+html.ie8 .page {
+  padding-left:0;
+  padding-right:0;
+}
+
+// Added additional specificity to counter clearfix styling on :after
+.page .region-preblocks,
+.page .region-postblocks,
+.page .wrap-columns {
+  padding-top:30px;
+  margin-top:30px;
+  background:url('../images/hr.png') repeat-x top;
+  position:relative;
+  overflow:hidden;
+  &:before {
+    content:' ';
+    position:absolute;
+    background:#fff;
+    display:block;
+    width:15px;
+    height:15px;
+    top:0;
+    right:0;
+  }
+  &:after {
+    content:' ';
+    position:absolute;
+    background:#fff;
+    display:block;
+    width:15px;
+    height:15px;
+    top:0;
+    left:0;
+    visibility:visible; // Counter the clearfix again
+  }
+}
+
+/**
+ * [ 3 ] STYLING PER REGION
+ */
+
+/**
+ * Header
+ */
+
+body .masthead {
+  position:relative;
+  //Fix IE7 z-index nesting bug
+  *z-index:5;
+  border-bottom:50px solid #fff;
+  padding-left:15px;
+  padding-right:15px;
+  // Make sure the extra padding outside our grid doesn't overflow the viewport
+  // (responsive padding) @see html.ie7, html.ie8
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  background:#fff;
+  padding-top:50px;
+  @media screen and (max-width:768px) {
+    padding-top:30px;
+    border-bottom-width:30px;
+  }
+  @media screen and (max-width:480px) {
+    padding-top:15px;
+    border-bottom-width:15px;
+  }
+  @media screen and (max-width:320px) {
+    padding-top:7px;
+    border-bottom-width:7px;
+  }
+  a:hover,
+  a:focus {
+    background:none;
+  }
+  a.logo {
+    display:block;
+    float:left;
+    margin-top:0;
+    margin-bottom:0;
+    padding:0;
+    background-color:#ff9900;
+    &:hover, &:focus {
+      padding:0;
+    }
+    img {
+      margin:0;
+      padding:0;
+      display:block;
+    }
+  }
+  /* Navigation */
+  .primary-menu {
+    display:block;
+    z-index:6;
+    position:relative;
+    float:right;
+    line-height:1em;;
+    margin-top:2em;
+    margin-bottom:0;
+    padding:0;
+    @include clearfix;
+    @media screen and (max-width:480px) {
+      clear:both;
+      float:none;
+      width:100%;
+      margin-left:0;
+      margin-right:0;
+    }
+    li {
+      float:left;
+      position:relative;
+      margin:0 0 0 25px;
+      padding:0;
+      @media screen and (max-width:480px) {
+        margin:0;
+        width:100%;
+        border-bottom:1px solid #D4D4D4;
+      }
+      a {
+        margin:0;
+        padding:0 0 10px 0;
+        color:#8c8c8c;
+        &.active,
+        &:hover,
+        &:focus {
+          color:#ff9900;
+          background:transparent;
+          padding:0 0 10px 0;
+        }
+        @media screen and (max-width:480px) {
+          display:block;
+          padding:15px 7px;
+          &.active,
+          &:hover,
+          &:focus {
+            padding:15px 7px;
+          }
+        }
+      }
+      ul {
+        position:absolute;
+        z-index:7;
+        left:-999999px;
+        top:auto;
+        margin-top:10px;
+        text-transform:none;
+        background:#000;
+        @include opacity(0.8);
+        font-size:12px;
+        padding:5px 0;
+        @media screen and (max-width:480px) {
+          position:static;
+          @include opacity(1);
+          background:transparent;
+          padding-bottom:7px;
+          width:100%!important;
+          margin:0;
+        }
+          li {
+            margin:0;
+            @media screen and (max-width:480px) {
+              width:100%!important;
+              border-top:1px solid #D4D4D4;
+              border-bottom:0;
+            }
+            a {
+              padding:10px;
+              margin:0 20px;
+              display:block;
+              color:#d1d1d1;
+              @media screen and (max-width:480px) {
+                color:#8c8c8c;
+                width:100%!important;
+                margin:0;
+                padding:15px 10px;
+              }
+              &.active,
+              &:hover,
+              &:focus {
+                padding:10px;
+                @media screen and (max-width:480px) {
+                  padding:15px 10px;
+                }
+              }
+            }
+            &.last a {
+              border:none;
+            }
+          }
+      }
+      &:hover, &:focus {
+        ul {
+          left:auto;
+        }
+      }
+      &.expanded > a:after {
+        content:' +';
+        font-family:verdana;
+      }
+    }
+  }
+}
+
+// Ie<=8 doesn't understand the border-box attr so we degrate to regular padding
+html.ie7 .masthead,
+html.ie8 .masthead {
+  padding-left:0;
+  padding-right:0;
+}
+
+body.not-front .masthead {
+  border-bottom-width:20px;
+}
+
+
+
+/**
+ * Styling for all blocks
+ */
+
+.page .content,
+.page .block {
+  ul {
+    margin:15px 0;
+    list-style:none;
+    list-style-type:none;
+    li {
+      padding-left:15px;
+      padding:3px 0 3px 15px;
+      background:url('../images/bullet.png') no-repeat 0 0.6em;
+    }
+  }
+}
+
+.block img {
+  border:4px double #d4d4d4;
+  background:#fff;
+  &.noborder {
+    border:none;
+  }
+}
+
+// img-link class gets addde by respondr.js
+.page .block .img-link {
+  position:relative;
+  display:block;
+  .wrap-img-link-icon {
+    position:absolute;
+    display:block;
+    bottom:50%;
+    left:50%;
+    margin-bottom:-25px;
+    margin-left:-25px;
+    width:50px;
+    height:50px;
+    @include opacity(0);
+    @include scale(0.1);
+    @include single-transition(all,150ms);
+    // For IE compatibility we fade one container and AlphaImageLoad a child container
+    // To avoid having to use 2 filter on 1 element.
+    .img-link-icon {
+      display:block;
+      width:50px;
+      height:50px;
+      cursor:pointer;
+      background:transparent url('../images/img-link-read.png') no-repeat center center;
+      filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/img-link-read.png');
+    }
+  }
+  &:hover,
+  &:focus,
+  &:active, {
+    .wrap-img-link-icon {
+      @include opacity(0.6);
+      @include scale(1);
+    }
+  }
+  &.img-link-zoom .img-link-icon {
+    background-image: url('../images/img-link-zoom.png');
+  }
+}
+.page .block form .img-link {
+  position:static;
+  display:inline;
+  .wrap-img-link-icon {
+    display:none;
+  }
+}
+
+.block {
+  h2 {
+    margin-bottom:15px;
+  }
+}
+
+nav.block {
+  font-size:12px;
+  //text-transform:none;
+  ul {
+    li {
+      a {
+        color:#8c8c8c;
+      }
+    }
+  }
+}
+
+.block-action {
+  .grid-inner {
+    background:url('../images/bg-action-block.png');
+    padding:30px; // Prevent margin collapse
+    font-size:24px;
+    line-height:1.2em;
+    text-align:center;
+    text-transform:uppercase;
+    zoom:1;
+    color:#787878
+  }
+}
+
+/**
+ * Featured
+ */
+
+.mast .region-featured {
+  position:relative;
+  clear:both;
+  // Inset shadow top
+  &:before {
+    content:' ';
+    position:absolute;
+    z-index:5;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:url('../images/inner-glow-5px-stacked.png') repeat 0 5px;
+  }
+  article {
+    overflow:hidden;
+    position:relative;
+    width:100%;
+    ul {
+      margin:0;
+      padding:0;
+      list-style:none;
+      list-style-type:none;
+      li {
+        margin:0;
+        padding:0;
+        background:none;
+        position:relative;
+      }
+    }
+    img {
+      border:none;
+      display:block;
+    }
+    .text-box {
+      width:30%;
+      padding:11px 15px;
+      position:absolute;
+      bottom:30px;
+      right:50px;
+      color:#ddd;
+      background:#000;
+      @include opacity(0.7);
+      line-height:21px;
+      @media screen and (max-width:900px) {
+        width:50%;
+      }
+      @media screen and (max-width:550px) {
+        width:100%;
+        position:static;
+        @include opacity(1);
+        background:#333;
+        line-height:17px;
+        @include clearfix;
+      }
+      p {
+        margin-bottom:0.5em;
+      }
+      .read-more {
+        display:block;
+        clear:both;
+        text-align:right;
+        float:right;
+      }
+    }
+    // Must take flex nav container out of flow to prevent ie7 white-space issues
+    .flex-direction-nav {
+      position:absolute;
+      bottom:0;
+      li {position:static;}
+    }
+    .cycle-previous,
+    .cycle-next,
+    .prev,
+    .next  {
+      display:block;
+      position:absolute;
+      bottom:28px; // minus 2px for the shadow
+      width: 35px;
+      height: 35px;
+      overflow:hidden;
+      z-index:5;
+      background-color:#fff;
+      text-indent:-999999px;
+      cursor:pointer;
+      @include opacity(0.80);
+      @include box-shadow(rgba(0,0,0,0.5) 1px 1px 1px);
+      @include border-radius(3px);
+      &:hover, &:focus, :active {
+        background-color:#fff;
+        outline:none;
+      }
+      @media screen and (max-width:550px) {
+        display:none;
+      }
+    }
+    .cycle-previous,
+    .prev {
+      left:30px;
+      background:#fff url('../images/page-left.png') no-repeat center center;
+    }
+    .cycle-next,
+    .next {
+      left:75px;
+      background:#fff url('../images/page-right.png') no-repeat center center;
+    }
+  }
+}
+
+/**
+ * Pre & Post Blocks
+ */
+
+.region-preblocks,
+.region-postblocks {
+  text-align:justify;
+  .block {
+    img {
+      @include opacity(0.7);
+      @include single-transition(opacity,500ms);
+      &:hover,
+      &:focus {
+        @include opacity(1);
+      }
+    }
+    &:hover,
+    &:focus {
+      img {
+        @include opacity(1);
+      }
+    }
+  }
+}
+
+/**
+ * Sidebars
+ */
+
+.region-sidebar-first,
+.region-sidebar-second {
+  margin-bottom:30px;;
+  .block {
+    .grid-inner {
+      background:url('../images/hr.png') repeat-x top;
+      padding-top:30px;
+    }
+    &.first .grid-inner {
+      background:none;
+      padding-top:0;
+    }
+  }
+}
+
+.region-sidebar-first {
+  background:url('../images/vr.png') repeat-y 100% 0;
+}
+.region-sidebar-second {
+  background:url('../images/vr.png') repeat-y 0 0;
+}
+
+/**
+ * Main Content
+ */
+
+.page {
+  .node {
+    margin-bottom:30px;
+    position:relative;
+    .node-title {
+      margin-bottom:10px;
+      a {
+        color:#8c8c8c;
+        &:hover, &:focus {
+          color:#fff;
+        }
+      }
+    }
+    .byline {
+      font-size:11px;
+      margin-top:-5px;
+      margin-bottom:13px;
+      @include opacity(0.8);
+      ul {
+        display:inline;
+        margin:0;
+        padding:0;
+        li {
+          display:inline;
+          margin:0;
+          padding:0;
+          background:none;
+          &:before {
+            content:' // ';
+          }
+          a {
+            color:#8c8c8c;
+            &:hover, &:focus {
+              color:#fff;
+            }
+          }
+        }
+      }
+    }
+    &.node-datebox {
+      @media screen and (max-width:320px) {
+        margin-left:0;
+        .date-box {
+          display:none;
+        }
+      }
+      margin-left:85px;
+      .date-box {
+        position:absolute;
+        top:0;
+        left:-85px;
+        .day {
+          background:#f0f0f0 url('../images/bg-datebox.png') no-repeat top left;
+          font-size:30px;
+          line-height:54px;
+          text-align:center;
+          display:block;
+          width:54px;
+          height:54px;
+          color:#787878;
+        }
+        .month {
+          display:block;
+          width:54px;
+          text-align:center;
+          text-transform:uppercase;
+          font-size:18px;
+          margin-top:2px;
+        }
+      }
+    }
+  }
+  .comment {
+    margin-bottom:15px;
+    position:relative;
+    header {
+      width:100%;
+      height:30px;
+      line-height:30px;
+      text-indent:3px;
+      background:#f6f6f6;
+      font-size:90%;
+    }
+    .content {
+      padding-top:15px;
+    }
+    footer {
+      float:right;
+      line-height:30px;
+      text-transform:lowercase;
+      font-size:90%;
+      ul, li {
+        display:inline;
+        margin:0;
+        padding:0;
+        background:none;
+      }
+    }
+  }
+  h2.comment-form {
+    background:#f6f6f6;
+    height:30px;
+    line-height:30px;
+    text-indent:3px;
+    clear:both;
+  }
+  .indented {
+    margin-left: 30px;
+  }
+}
+
+/**
+ * Footer
+ */
+
+.region-footer {
+  padding:1px 15px;
+  // Make sure the extra padding outside our grid doesn't overflow the viewport
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background:#2e2e2e;
+  color:#d1d1d1;
+  a,h1,h2,h3,h4,h5,h6 {
+    color:#d1d1d1;
+  }
+  h1,h2 {
+    font-size:24px;
+    //text-transform:none;
+    line-height:1.2em;
+    margin-bottom:40px;
+    margin-top:25px;
+  }
+}
+
+.region-footer-extra {
+  padding:1px 15px;
+  // Make sure the extra padding outside our grid doesn't overflow the viewport
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background:#141414;
+  color:#747474;
+  font-size:10px;
+  a,h1,h2,h3,h4,h5,h6 {
+    color:#747474;
+  }
+  ul, li {
+    padding:0;
+    margin:0;
+    display:inline;
+    font-size:10px;
+  }
+  ul.menu li:after {
+    content:' |';
+  }
+  ul.menu li.last:after {
+    content:'';
+  }
+  nav {
+    //text-transform:none;
+  }
+  h1,h2 {
+    //text-transform:none;
+  }
+}
+
+html.ie7,
+html.ie8 {
+  .region-footer,
+  .region-footer-extra {
+    padding-left:0;
+    padding-right:0;
+  }
+}
+
+/**
+ * Attribution link
+ */
+
+.arctica-attr-link {
+  @include opacity(0.6);
+  text-align:center;
+  clear:both;
+  padding:0.5em 0;
+  font-size:90%;
+  color: #ccc;
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:focus,
+  a:active,{
+    color: #ccc;
+  }
+}
+
+/**
+ * [ 5 ] DRUPAL ELEMENTS
+ */
+
+.filter-help a {
+  padding:0 20px;
+}
+
+/**
+ * [ 6 ] DRUPAL MODULES
+ */
+
+/**
+ * Twitter Pull
+ */
+
+.mast .tweets-pulled-listing {
+  .cycle-prev,
+  .cycle-next,
+  .prev,
+  .next  {
+    background:#ff9900 url('../images/color-pager-stacked.png') no-repeat 0 0;
+    width:12px;
+    height:15px;
+    cursor:pointer;
+    float:left;
+    display:block;
+    padding:0;
+    text-indent:-999999px;
+    &:hover, &:focus {
+      padding:0;
+    }
+  }
+  .cycle-next,
+  .next  {
+    background-position:0 -15px;
+  }
+  ul {
+    margin:0;
+    padding:0;
+    li {
+      margin:0;
+      padding:0;
+      background:none;
+    }
+  }
+  blockquote {
+    padding-bottom:50px;
+  }
+}
+
+/**
+ * Flickr Module
+ */
+
+.block-flickr .grid-inner {
+  img {
+    margin:0 13px 15px 0;
+    display:inline-block;
+  }
+  a {
+    padding:0;
+    background-color:transparent;
+    &.active,
+    &:hover,
+    &:focus {
+      padding:0;
+    }
+  }
+}
+
+/**
+ * Lightbox2
+ */
+
+// Unfortunately this uses !important everywhere
+// Necessary until the module gets fixed:
+
+#lightbox2-overlay {
+  opacity:0.7!important;
+}
+
+#outerImageContainer,
+#imageDataContainer {
+  border:8px solid #000;
+  border-color:rgba(0,0,0,0.85);
+  #prevLink,
+  #nextLink {
+    opacity:0.75;
+  }
+}
+
+#outerImageContainer {
+  border-bottom-width:0;
+}
+
+#imageDataContainer {
+  border-top-width:0;
+}

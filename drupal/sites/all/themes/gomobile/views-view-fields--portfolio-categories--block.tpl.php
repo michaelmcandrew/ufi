@@ -1,0 +1,1 @@
+<li class="segment-<?php print $fields['tid']->content.((arg(1) == $fields['tid']->content) ? ' selected' : '') ?>"><a href="<?php print url('portfolio/'.$fields['tid']->content); ?>" data-value="dv<?php print $fields['tid']->content; ?>"><?php print $fields['name']->content; ?></a></li>
