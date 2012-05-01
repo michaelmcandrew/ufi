@@ -1,0 +1,10 @@
+You need to download JW Player: http://www.longtailvideo.com/players/jw-flv-player
+and WhoTube skin for it: http://www.longtailvideo.com/addons/skins/183/WhoTube.
+Before you download JW Player, make sure to uncheck "Include Viral, a video sharing plugin".
+I couldn't attach it due its license limitations.
+
+Put JW Player and the skin in data/jwplayer folder. Make sure, skin remains in it's separate folder, so as a result you get this kind of paths to crucial files:
+data/jwplayer/jwplayer.js
+data/jwplayer/whutube/whotube.xml
+
+More informations in the documentation (FAQ / How to add self-hosted audio/video?).

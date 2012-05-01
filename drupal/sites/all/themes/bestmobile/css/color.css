@@ -1,0 +1,22 @@
+/**
+ * @package Website_Template
+ * @since Website 1.1
+ */
+
+/* =Color
+----------------------------------------------------------------------------- */
+mark, .post .content .tags a:hover, .items .item .tags a:hover, .filter a:hover, .filter a.active {
+	background-color: #089bc3;
+}
+a, .post .content button:hover, .comments .comment cite a:hover, .widget a:hover {
+	border-color: #089bc3;
+}
+input[type="submit"]:hover {
+	border-color: #089bc3 !important;
+}
+a, #nav-top a:hover, #nav-main a:hover, #nav-main li.sub > a:hover:after, #bottom input[type="submit"]:hover, #footer a:hover, .breadcrumbs a:hover, .post .title a:hover, .comments .comment .meta a:hover, .comments .comment .meta cite a, .pagination a:hover {
+	color: #089bc3;
+}
+.widget a:hover {
+	color: #089bc3 !important;
+}
