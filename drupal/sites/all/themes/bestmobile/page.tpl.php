@@ -91,6 +91,7 @@ if (!isset($page['content']['system_main']['nodes'][$arg1]['#node']->type)) $pag
           <?php if ($page['content']['system_main']['nodes'][$arg1]['#node']->type or 
                 (arg(0) == 'taxonomy' and arg(1) == 'term') or
                 (arg(0) == 'news') or 
+				(arg(0) == 'articles') or 
                 (arg(0) == 'archive') or
                 (arg(0) == 'reports') or
                 (arg(0) == 'videos') or
@@ -99,6 +100,7 @@ if (!isset($page['content']['system_main']['nodes'][$arg1]['#node']->type)) $pag
             <?php if ($title and (
                 (arg(0) == 'taxonomy' and arg(1) == 'term') or
                 (arg(0) == 'news') or 
+				(arg(0) == 'articles') or
                 (arg(0) == 'reports') or
 				(arg(0) == 'videos') or
 				(arg(0) == 'trustees')
