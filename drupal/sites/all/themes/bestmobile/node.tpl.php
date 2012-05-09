@@ -13,11 +13,13 @@
         print render($content);
       ?>
     </div>
+	<?php print render($content['links']); ?>
   </section>
   <?php if ($display_submitted): ?>
   <ul class="meta">
     <?php if ($node->comment and !($node->comment == 1 and !$node->comment_count)) { ?><li class="comments"><a href="<?php print url("node/$node->nid", array('fragment' => 'comment-form')) ?>"><?php print format_plural($node->comment_count, '1 Comment', '@count Comments') ?></a></li><?php } ?>
     <li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
+	<li class="author"><?php print($name); ?></li>
     <?php if ($field_category = render($content['field_category'])) { ?><li class="category"><?php print $field_category; ?>&nbsp;</li><?php } ?>
     <?php if ($field_tags = render($content['field_tags'])) { ?><li class="tags"><?php print $field_tags; ?>&nbsp;</li><?php } ?>
     <?php /* ?><li class="link"><?php print render($content['links']); ?></li><?php */ ?>
@@ -50,6 +52,7 @@
   <ul class="meta">
     <?php if ($node->comment and !($node->comment == 1 and !$node->comment_count)) { ?><li class="comments"><a href="<?php print url("node/$node->nid", array('fragment' => 'comment-form')) ?>"><?php print format_plural($node->comment_count, '1 Comment', '@count Comments') ?></a></li><?php } ?>
     <li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
+	<li class="author"><?php print($name); ?></li>
     <?php if ($field_category = render($content['field_category'])) { ?><li class="category"><?php print $field_category; ?>&nbsp;</li><?php } ?>
     <?php if ($field_tags = render($content['field_tags'])) { ?><li class="tags"><?php print $field_tags; ?>&nbsp;</li><?php } ?>
     <?php /* ?><li class="link"><?php print render($content['links']); ?></li><?php */ ?>

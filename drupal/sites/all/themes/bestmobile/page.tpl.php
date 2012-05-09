@@ -168,7 +168,7 @@ if (!isset($page['content']['system_main']['nodes'][$arg1]['#node']->type)) $pag
 
 				<!-- Footer -->
 				<section id="footer" class="clear">
-					<p class="alpha"><?php print render($page['footer_copyright']); ?><a href="http://www.themesnap.com/">Drupal theme by ThemeSnap.com</a></p>
+					<p class="alpha"><?php print render($page['footer_copyright']); ?><!-- <a href="http://www.themesnap.com/">Drupal theme by ThemeSnap.com</a> --></p>
 				</section>
 				<!-- // Footer -->
 
