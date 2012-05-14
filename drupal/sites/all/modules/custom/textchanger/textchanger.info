@@ -1,0 +1,4 @@
+name = Text Changer
+description = Adapt the module code to set a default format for a content type.
+package = Custom modules
+core = "7.x"

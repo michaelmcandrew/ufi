@@ -16,7 +16,20 @@
   <script src="<?php print $base_url.'/'.path_to_theme(); ?>/js/respond.min.js"></script>
   <![endif]-->
   <?php print $scripts; ?>
-
+  <?php if($node->field_tweet[0]['value'] != NULL) { 
+     $tweet = $node->field_tweet[0]['value']; 
+   } else { 
+     $tweet  = $title; 
+    } 
+  ?>
+   <script type = "text/javascript"> 
+     var addthis_share =  { 
+       //… 
+       templates: { 
+         twitter = "<?php print $tweet; ?> {{url}}" 
+       }
+     }
+   </script>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">
@@ -25,5 +38,6 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+
 </body>
 </html>

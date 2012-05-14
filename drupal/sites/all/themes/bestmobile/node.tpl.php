@@ -9,11 +9,10 @@
         hide($content['links']);
         hide($content['field_tags']);
         hide($content['field_category']);
-        hide($content['my_additional_field']);
         print render($content);
       ?>
+		<?php print render($content['links']); ?>
     </div>
-	<?php print render($content['links']); ?>
   </section>
   <?php if ($display_submitted): ?>
   <ul class="meta">
@@ -38,16 +37,10 @@
         hide($content['links']);
         hide($content['field_tags']);
         hide($content['field_category']);
-        hide($content['my_additional_field']);
         print render($content);
       ?>
     </div>
 	</section>
-  <?php if ($my_additional_field = render($content['my_additional_field'])) { ?>
-	<div class="social clear">
-			<?php print $my_additional_field; ?>
-	</div>
-  <?php } ?>
   <?php if ($display_submitted): ?>
   <ul class="meta">
     <?php if ($node->comment and !($node->comment == 1 and !$node->comment_count)) { ?><li class="comments"><a href="<?php print url("node/$node->nid", array('fragment' => 'comment-form')) ?>"><?php print format_plural($node->comment_count, '1 Comment', '@count Comments') ?></a></li><?php } ?>

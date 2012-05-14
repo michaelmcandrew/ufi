@@ -110,15 +110,22 @@ if (theme_get_setting('tm_value_theme_3') == 'left') {
 				<?php if (isset($help)) { print $help; } ?>
           <?php if (isset($page['content']['system_main']['nodes']) or 
                 (arg(0) == 'taxonomy' and arg(1) == 'term') or
-                (arg(0) == 'blog') or 
+               	(arg(0) == 'news') or 
+				(arg(0) == 'articles') or 
                 (arg(0) == 'archive') or
-                (arg(0) == 'portfolio') or
-                (arg(0) == 'galleries')
+                (arg(0) == 'reports') or
+                (arg(0) == 'videos') or
+				(arg(0) == 'trustees') or 
+				(arg(0) == 'home')
             ) { ?>
             <?php if ($title and (
                 (arg(0) == 'taxonomy' and arg(1) == 'term') or
-                (arg(0) == 'blog') or 
-                (arg(0) == 'archive')
+               	(arg(0) == 'news') or 
+				(arg(0) == 'articles') or
+                (arg(0) == 'reports') or
+				(arg(0) == 'videos') or
+				(arg(0) == 'trustees') or
+				(arg(0) == 'home')
               )) { ?>
               <article class="post default">
 						    <section class="main clear">

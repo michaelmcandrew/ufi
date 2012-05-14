@@ -95,7 +95,8 @@ if (!isset($page['content']['system_main']['nodes'][$arg1]['#node']->type)) $pag
                 (arg(0) == 'archive') or
                 (arg(0) == 'reports') or
                 (arg(0) == 'videos') or
-				(arg(0) == 'trustees')
+				(arg(0) == 'trustees') or 
+				(arg(0) == 'home')
             ) { ?>
             <?php if ($title and (
                 (arg(0) == 'taxonomy' and arg(1) == 'term') or
@@ -103,7 +104,8 @@ if (!isset($page['content']['system_main']['nodes'][$arg1]['#node']->type)) $pag
 				(arg(0) == 'articles') or
                 (arg(0) == 'reports') or
 				(arg(0) == 'videos') or
-				(arg(0) == 'trustees')
+				(arg(0) == 'trustees') or
+				(arg(0) == 'home')
               )) { ?>
               <article class="post default">
 						    <section class="main clear">
