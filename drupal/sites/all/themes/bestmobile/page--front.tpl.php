@@ -187,7 +187,7 @@ if (theme_get_setting('tm_value_theme_3') == 'left') {
 
 				<!-- Footer -->
 				<section id="footer" class="clear">
-					<p class="alpha"><?php print render($page['footer_copyright']); ?><!-- <a href="http://www.themesnap.com/">Drupal theme by ThemeSnap.com</a> --></p>
+					<p class="alpha"><?php print render($page['footer_copyright']); ?></p>
 				</section>
 				<!-- // Footer -->
 

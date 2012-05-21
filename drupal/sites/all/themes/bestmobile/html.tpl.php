@@ -1,6 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="<?php print $language->dir; ?>" lang="<?php print $language->language; ?>" xml:lang="<?php print $language->language; ?>" xmlns:fb="http://www.facebook.com/2008/fbml">
-<head profile="<?php print $grddl_profile; ?>">
+<!DOCTYPE html>
+<html class="no-js" dir="<?php print $language->dir; ?>" lang="<?php print $language->language; ?>" xml:lang="<?php print $language->language; ?>">
+<head>
   <?php global $base_url; ?>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
@@ -16,6 +16,7 @@
   <script src="<?php print $base_url.'/'.path_to_theme(); ?>/js/respond.min.js"></script>
   <![endif]-->
   <?php print $scripts; ?>
+  
   <?php if($node->field_tweet[0]['value'] != NULL) { 
      $tweet = $node->field_tweet[0]['value']; 
    } else { 
@@ -38,6 +39,5 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-
 </body>
 </html>
