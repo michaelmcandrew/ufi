@@ -2,7 +2,13 @@
 <article class="post<?php print ' '.strip_tags(render($content['field_icon'])); ?>">
   <section class="main clear">
     <h1 class="title"><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print $title; ?></a></h1>
-    <div class="content">
+	<?php if ($display_submitted): ?>
+		<ul class="meta">
+			<li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
+			<li class="author"><?php print($name); ?></li>
+		</ul>
+		<div class="content">
+	<?php endif; ?>
       <?php
         // We hide the comments and links now so that we can render them later.
         hide($content['comments']);
@@ -30,6 +36,13 @@
 <article class="post<?php print ' '.strip_tags(render($content['field_icon'])); ?>">
   <section class="main clear">
     <h1 class="title"><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print $title; ?></a></h1>
+	<?php if ($display_submitted): ?>
+		<ul class="meta">
+			<li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
+			<li class="author"><?php print($name); ?></li>
+		</ul>
+		<div class="content">
+	<?php endif; ?>
     <div class="content">
       <?php
         // We hide the comments and links now so that we can render them later.

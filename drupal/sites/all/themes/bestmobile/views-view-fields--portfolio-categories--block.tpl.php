@@ -1,1 +1,0 @@
-<?php print str_replace('taxonomy/term','portfolio',$fields['name']->content); ?>
