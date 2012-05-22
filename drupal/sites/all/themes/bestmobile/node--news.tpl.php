@@ -5,7 +5,6 @@
 	<?php if ($display_submitted): ?>
 		<ul class="meta">
 			<li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
-			<li class="author"><?php print($name); ?></li>
 		</ul>
 		<div class="content">
 	<?php endif; ?>
