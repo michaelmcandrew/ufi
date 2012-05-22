@@ -401,7 +401,7 @@ class AddThis {
   private function getAttributeTitle($entity) {
     if (isset($entity->title)) {
       return array(
-        self::TITLE_ATTRIBUTE => (check_plain($entity->title)  . ' - ' . variable_get('site_name')),
+        self::TITLE_ATTRIBUTE => ($entity->field_tweet_text['und'][0]['safe_value']),
       );
     }
     return array();

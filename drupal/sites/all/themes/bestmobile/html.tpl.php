@@ -23,14 +23,6 @@
      $tweet  = $title; 
     } 
   ?>
-   <script type = "text/javascript"> 
-     var addthis_share =  { 
-       //… 
-       templates: { 
-         twitter = "<?php print $tweet; ?> {{url}}" 
-       }
-     }
-   </script>
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <div id="skip-link">
