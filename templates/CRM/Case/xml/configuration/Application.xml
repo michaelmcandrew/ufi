@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+<CaseType>
+  <name>Application</name>
+  <ActivityTypes>
+    <ActivityType>
+      <name>Open application</name>
+      <max_instances>1</max_instances>
+    </ActivityType>
+    <ActivityType>
+      <name>Donor requirements</name>
+    </ActivityType>
+    <ActivityType>
+      <name>Funding installment</name>
+    </ActivityType>
+  </ActivityTypes>
+  <ActivitySets>
+    <ActivitySet>
+      <name>Stage one</name>
+      <label>Stage one</label>
+      <timeline>true</timeline>
+      <ActivityTypes>
+        <ActivityType>
+          <name>Start stage one application</name>
+          <status>Completed</status>
+        </ActivityType>
+        <ActivityType>
+          <name>Submit stage one application</name>
+          <reference_activity>Start application</reference_activity>
+          <reference_offset>28</reference_offset>
+          <reference_select>newest</reference_select>
+        </ActivityType>
+        <ActivityType>
+          <name>Evaluate stage one application</name>
+          <reference_activity>Open application</reference_activity>
+          <reference_offset>56</reference_offset>
+          <reference_select>newest</reference_select>
+        </ActivityType>
+      </ActivityTypes>
+    </ActivitySet>
+  </ActivitySets>
+  <CaseRoles>
+    <RelationshipType>
+        <name>Evaluator</name>
+        <creator>1</creator>
+        <manager>1</manager>
+    </RelationshipType>
+ </CaseRoles>
+</CaseType>
