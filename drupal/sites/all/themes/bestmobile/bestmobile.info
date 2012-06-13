@@ -37,6 +37,7 @@ stylesheets[all][] = css/structure.css
 stylesheets[all][] = css/parts.css
 stylesheets[all][] = css/widgets.css
 stylesheets[all][] = css/color.css
+stylesheets[all][] = css/custom.css
 
 stylesheets[all][] = js/jquery.fancybox.css
 stylesheets[all][] = js/jquery.fancybox-buttons.css

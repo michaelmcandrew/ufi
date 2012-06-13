@@ -1,0 +1,66 @@
+.webform-component-fieldset { padding-bottom: 20px; font-size: 14px; }
+.webform-container-inline label { width: 100px; display: inline-block; }
+input[type="email"] { margin-right: 5px; padding: 0 10px; width: 190px; height: 28px; -webkit-box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.1); border-style: solid; border-width: 1px; border-color: silver; font-size: 13px; font-family: Arial, Helvetica, sans-serif; }.button {
+border: 1px solid #CACACA; 
+border-radius: 4px;
+background-color: #F0F0F0;
+background: -webkit-linear-gradient(top, white 0%, #E9E9E9 100%); 
+background: -moz-linear-gradient(center top , #FFFFFF 0%, #E9E9E9 100%) repeat scroll 0 0 transparent;
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e9e9e9')";
+outline: none;
+font: normal 18px/22px Rokkitt, "Times New Roman";
+color: #000;
+white-space: nowrap;
+cursor: pointer;
+position: relative;
+margin: 0;
+padding: 0 10px;
+display: inline-block;
+vertical-align: baseline;
+-webkit-box-align: center;
+text-align: center;
+}
+
+.button:hover { border: 1px solid #089BC3; }
+
+.button span { 
+width: 16px;
+height: 22px;
+background-repeat: no-repeat;
+background-position: 0 center;
+display: inline-block;
+margin-right: 8px;
+vertical-align: top;
+}
+
+.page-civicrm .button span {
+width: auto;
+height: auto;
+margin-right: 0;
+}
+.back { margin-bottom: 12px; }.right { float: right; }
+.left { float: left; }
+.clear { clear: both; }
+
+.post .content ul, .post .content ol { padding-left: 24px; margin: 24px 0; }
+.post .content ul li, .post .content ol li { margin: 12px 0; }#block-search-form { padding: 14px 0 0 130px; }
+.widget-search input[type="submit"] { background-position: 0 center; }div.read-more { margin-top: 6px; }.field-name-field-add-this { clear: both; }
+.node-type-page .field-name-field-add-this { display: none; visibility: hidden; }
+.page-node-64 .field-name-field-add-this { display: block; visibility: visible; }.field-name-field-video { margin-top: 18px; }.index li a.active { color: #089BC3; border-bottom: 1px dotted #089BC3; }
+li a.active, li a.active-trail { color: #089BC3; !important; }
+header a:hover, .field-name-field-add-this a:hover { border-bottom: 0 none; }body.maintenance-page { background-color: #fff; padding: 30px; }
+body.maintenance-page #name-and-slogan { display: none; visibility: hidden; }
+body.maintenance-page #main { padding: 20px 10px; }.field-name-field-intro { font-style: italic; }.block { clear: both; }#block-text-resize-0 { float: left; }#footer { font-size: 11px; line-height: 1.5; }
+#footer ul, #footer li { list-style: none outside none; margin: 0 0 12px 0; padding: 0; }
+#footer li { float: left; display: inline; margin-right: 6px; }.view-latest .view-footer { margin-top: 12px; }
+.region-sidebar-fourcolumns .icon { width: 32px; height: 32px; }.block-google-plusone { float: left; clear: none; margin: 10px 0 0 0; }#block-block-21 { float: left; clear: none; margin: 10px 0 0 10px; padding-left: 10px; border-left: 1px dotted #8A8A8A; }.field-name-field-tweet-text { display: none; visibility: hidden; }.faq-question a { border-bottom: 1px dotted #089BC3; }.item-list .pager li.pager-last, .item-list .pager li.pager-next { margin-left: 10px; }#banners h2 { font-size: 28px; font-family: Rokkitt, "Times New Roman"; line-height: 32px; color: #3B3B3B; font-weight: normal; }
+#banners article {  width: 300px; padding: 30px 30px 0 30px; }#block-block-4 { float: left; clear: none; margin: 10px 0 0 10px; padding-left: 10px; border-left: 1px dotted #8A8A8A; }
+.widget-social { overflow: hidden; }
+.widget-social li { display: inline-block; margin: 0 4px 0 0; float: left; }
+.widget-social li a { width: 24px; height: 24px; padding: 0; }
+
+.field-name-field-addthis { margin-top: 10px; }
+.field-name-field-addthis a:hover { border-bottom: 0 none; }.node-trustee .field-name-body, .view-trustees .field-name-body { clear: left; padding-top: 10px; }
+.view-trustees .field-name-field-quote { font: italic 16px/18px Georgia, serif; } 
+.node-trustee .field-name-field-quote { font-style: italic; padding-bottom: 20px; background: url(/sites/all/themes/bestmobile/img/icons/quote.png) no-repeat right bottom; }#content .field-name-field-image img, #content .field-name-field-iimage img { width: auto !important; }
+.front .post img, .node-trustee img, .node-news img, .view-latest-news img, .node-report img, .view-reports img, .view-trustees img  { float: left; padding: 0 10px 10px 0; }.view-header { background-color: #FBFBFB; box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1); margin-bottom: 18px; padding: 18px 25px; font-size: 15px; }
