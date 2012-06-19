@@ -138,7 +138,9 @@ if (theme_get_setting('tm_value_theme_3') == 'left') {
 					<!-- Default post with image -->
 					<article class="post default">
 						<section class="main clear">
+							<?php print render($title_prefix); ?>
 							<h1 class="title"><?php print $title; ?></h1>
+							<?php print render($title_suffix); ?>
 							<div class="content">
                 <?php print render($page['content']); ?>
 							</div>
@@ -149,7 +151,7 @@ if (theme_get_setting('tm_value_theme_3') == 'left') {
 
 				</section>
 				<!-- // Content -->
-        <?php if (arg(0) != 'portfolio' and arg(0) != 'galleries') { ?>
+      
 				<!-- Aside -->
 				<aside id="aside" class="<?php print $said2; ?>">
 					<ul>
@@ -157,7 +159,7 @@ if (theme_get_setting('tm_value_theme_3') == 'left') {
 					</ul>
 				</aside>
 				<!-- // Aside -->
-        <?php } ?>
+
 			</div>
 		</div>
 		<!-- // Main section -->

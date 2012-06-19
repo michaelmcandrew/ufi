@@ -29,7 +29,9 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <article class="post<?php print ' '.strip_tags(render($content['field_icon'])); ?>">
   <section class="main clear">
+	<?php print render($title_prefix); ?>
     <h1 class="title"><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print $title; ?></a></h1>
+	<?php print render($title_suffix); ?>
     <div class="content">
       <?php
         // We hide the comments and links now so that we can render them later.
