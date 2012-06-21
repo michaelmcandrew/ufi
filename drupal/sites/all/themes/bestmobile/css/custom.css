@@ -79,7 +79,11 @@ input[type="email"] {
 	margin-right: 8px;
 	vertical-align: top;
 }
-
+.large {
+	padding: 0 14px; 
+	font-size: 25px; 
+	line-height: 38px;
+}
 /*....lists....*/
 .post .content ul, 
 .post .content ol {
