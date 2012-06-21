@@ -36,10 +36,14 @@ input[type="email"] {
 	font-family: Arial, Helvetica, sans-serif;
 }
 .webform-component-textfield label,
-.webform-component-textarea label {
+.webform-component-textarea label,
+.webform-component-email label {
 	display: block;
 }
-.node-webform input[type="text"], .node-webform input[type="password"], .node-webform .yaselect-anchor {
+.node-webform input[type="text"], 
+.node-webform input[type="password"],
+.node-webform input[type="email"], 
+.node-webform .yaselect-anchor {
 	width: auto;
 }
 /*....links & buttons....*/
@@ -75,11 +79,6 @@ input[type="email"] {
 	margin-right: 8px;
 	vertical-align: top;
 }
-/*.page-civicrm .button span {
-	width: auto;
-	height: auto;
-	margin-right: 0;
-}*/
 
 /*....lists....*/
 .post .content ul, 
@@ -171,7 +170,10 @@ body.maintenance-page #main {
 	display: none;
 	visibility: hidden;
 }
-#block-block-4 {
+#block-block-4,
+.social-icons,
+.login, 
+.logout  {
 	float: left;
 	clear: none;
 	margin: 10px 0 0 10px;
@@ -216,12 +218,17 @@ body.maintenance-page #main {
 	clear: left;
 	padding-top: 10px;
 }
-.view-header {
+.view-header,
+.white,
+#aside .widget.white {
 	background-color: #FBFBFB;
 	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
 	margin-bottom: 18px;
 	padding: 18px 25px;
 	font-size: 15px;
+}
+.white p {
+	margin: 10px 0;
 }
 .view-trustees .field-name-field-quote {
 	font: italic 16px/18px Georgia, serif;
@@ -276,3 +283,12 @@ body.maintenance-page #main {
 
 /*....twitter block....*/
 
+/*....tabs....*/
+ul.primary {
+	margin: 5px 5px 0 5px;
+	border-bottom: 0 none;
+}
+ul.primary li a {
+	padding: 6px 12px;
+	display: inline-block;
+}
