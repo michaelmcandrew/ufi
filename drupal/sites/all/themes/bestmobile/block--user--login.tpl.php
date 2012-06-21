@@ -1,3 +1,4 @@
+<div class="white">
 <?php
 
  $elements = drupal_get_form('user_login_block');
@@ -24,3 +25,4 @@
  ?>
  
 <a href="/user/password">Forgot Password?</a>
+</div>

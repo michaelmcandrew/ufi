@@ -220,8 +220,7 @@ body.maintenance-page #main {
 }
 .view-header,
 .white,
-#aside .widget.white,
-#user-login-form {
+#aside .widget.white {
 	background-color: #FBFBFB;
 	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
 	margin-bottom: 18px;
