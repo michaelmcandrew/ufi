@@ -1,14 +1,11 @@
+<div class="white">
+<?php print render($title_prefix); ?>
+	 <?php if ($block->subject) { print '<h1>'.$block->subject.'</h1>'; } ?>
+<?php print render($title_suffix); ?>
 <?php
 
  $elements = drupal_get_form('user_login_block');
 
- /**
-   do all your rendering stuff here
-   drupal_render seems to add html to the elements array
-   and instead of printing what is returned from drupal_render
-   you can use the added html in ['#children'] elements of the arrays
-   to build the form in the order you want.
- **/
  $rendered = drupal_render($elements);
 
  // to see what you have to work with
@@ -31,3 +28,4 @@
  ?>
  
 <a href="/user/password">Forgot Password?</a>
+</div>

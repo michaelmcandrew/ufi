@@ -118,7 +118,9 @@ if (!isset($page['content']['system_main']['nodes'][$arg1]['#node']->type)) $pag
 					<!-- Default post with image -->
 					<article class="post default">
 						<section class="main clear">
+							<?php print render($title_prefix); ?>
 							<h1 class="title"><?php print $title; ?></h1>
+							<?php print render($title_suffix); ?>
 							<div class="content">
                 <?php print render($page['content']); ?>
 							</div>
