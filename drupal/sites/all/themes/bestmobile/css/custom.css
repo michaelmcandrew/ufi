@@ -1,4 +1,4 @@
-.back {
+.button.back {
 	margin-bottom: 12px;
 }
 .right {
@@ -35,11 +35,11 @@ input[type="email"] {
 	font-size: 13px;
 	font-family: Arial, Helvetica, sans-serif;
 }
-.webform-component-textfield label,
+/*.webform-component-textfield label,
 .webform-component-textarea label,
 .webform-component-email label {
 	display: block;
-}
+}*/
 .node-webform input[type="text"], 
 .node-webform input[type="password"],
 .node-webform input[type="email"], 
@@ -80,6 +80,7 @@ input[type="email"] {
 	vertical-align: top;
 }
 .large {
+	height: 40px;
 	padding: 0 14px; 
 	font-size: 25px; 
 	line-height: 38px;
