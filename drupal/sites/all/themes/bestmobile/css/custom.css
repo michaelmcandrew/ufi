@@ -19,7 +19,7 @@ div.read-more {
 	padding-bottom: 20px;
 	font-size: 14px;
 }
-.webform-container-inline label {
+/*.webform-container-inline label {
 	width: 100px;
 	display: inline-block;
 }
@@ -35,16 +35,35 @@ input[type="email"] {
 	font-size: 13px;
 	font-family: Arial, Helvetica, sans-serif;
 }
-/*.webform-component-textfield label,
+.webform-component-textfield label,
 .webform-component-textarea label,
 .webform-component-email label {
 	display: block;
-}*/
+}
 .node-webform input[type="text"], 
 .node-webform input[type="password"],
 .node-webform input[type="email"], 
 .node-webform .yaselect-anchor {
 	width: auto;
+}*/
+#crm-profile-block {
+	margin-bottom: 30px;
+}
+/* the next 4 styles are to override the civicrm form styles for the profile on user register page*/
+.page-user-register #crm-profile-block legend {
+	display: none;
+	visibility: hidden;
+}
+#crm-profile-block .crm-section .label {
+	float: none;
+	width: auto;
+	text-align: left;
+}
+.post #crm-profile-block .content {
+	margin-top: 0;
+}
+#crm-profile-block .crm-section .content {
+	margin-left: 0;
 }
 /*....links & buttons....*/
 .button {
@@ -149,6 +168,9 @@ body.maintenance-page #main {
 /*....blocks and fields....*/
 .block {
 	clear: both;
+}
+.block h1 {
+	font: normal 28px/28px Rokkitt, "Times New Roman";
 }
 .field-name-field-intro {
 	font-style: italic;
@@ -299,4 +321,17 @@ ul.primary {
 ul.primary li a {
 	padding: 6px 12px;
 	display: inline-block;
+}
+/*....error messages....*/
+div.messages {
+	border: 4px solid; 
+}
+div.status, table tr.ok {
+	background-color: #fff;
+}
+div.status, .ok {
+	color: #28972a;
+}
+div.status {
+	border-color: #28972a;
 }
