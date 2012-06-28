@@ -39,7 +39,7 @@ input[type="email"] {
 #crm-profile-block {
 	margin-bottom: 30px;
 }
-#edit-submit {
+.node-webform #edit-submit {
 	font-weight: bold;
 	border-color: #089BC3;
 	border-width: 2px;
