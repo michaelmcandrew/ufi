@@ -19,9 +19,10 @@ div.read-more {
 	padding-bottom: 20px;
 	font-size: 14px;
 }
-/*.webform-container-inline label {
-	width: 100px;
-	display: inline-block;
+.webform-client-form legend {
+	font: normal 28px/28px Rokkitt, "Times New Roman";
+	color: #3B3B3B;
+	padding-bottom: 10px;
 }
 input[type="email"] {
 	margin-right: 5px;
@@ -35,19 +36,34 @@ input[type="email"] {
 	font-size: 13px;
 	font-family: Arial, Helvetica, sans-serif;
 }
-.webform-component-textfield label,
-.webform-component-textarea label,
-.webform-component-email label {
-	display: block;
-}
-.node-webform input[type="text"], 
-.node-webform input[type="password"],
-.node-webform input[type="email"], 
-.node-webform .yaselect-anchor {
-	width: auto;
-}*/
 #crm-profile-block {
 	margin-bottom: 30px;
+}
+#edit-submit {
+	font-weight: bold;
+	border-color: #089BC3;
+	border-width: 2px;
+}
+input#edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-1,
+input#edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-7,
+input#edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12 {
+	display: none;
+	visibility: hidden;
+}
+label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-1"],
+label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-7"],
+label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12"] {
+	font-weight: bold;
+}
+label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-7"],
+label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12"] {
+	padding-top: 10px;
+	display: block;
+}
+.post .content input[type="text"].error, 
+.post .content input[type="password"].error, 
+.post .content textarea.error {
+	border: 1px solid red;
 }
 /* the next 4 styles are to override the civicrm form styles for the profile on user register page*/
 .page-user-register #crm-profile-block legend {
@@ -65,6 +81,7 @@ input[type="email"] {
 #crm-profile-block .crm-section .content {
 	margin-left: 0;
 }
+
 /*....links & buttons....*/
 .button {
 	border: 1px solid #CACACA;
@@ -104,15 +121,16 @@ input[type="email"] {
 	font-size: 25px; 
 	line-height: 38px;
 }
+
 /*....lists....*/
 .post .content ul, 
 .post .content ol {
 	padding-left: 24px;
-	margin: 24px 0;
+	margin: 8px 0;
 }
 .post .content ul li, 
 .post .content ol li {
-	margin: 12px 0;
+	margin: 4px 0;
 }
 
 /*....search....*/
@@ -186,6 +204,38 @@ body.maintenance-page #main {
 	clear: none;
 	margin: 10px 0 0 0;
 }
+.field-type-link-field {
+	font-weight: bold;
+	margin: 12px 0;
+}
+.field-type-link-field a {
+	border-bottom: 1px dotted #089BC3;
+}
+.form-item .description {
+	font-style: italic;
+}
+.node-trustee .field-name-body, 
+.view-trustees .field-name-body {
+	clear: left;
+	padding-top: 10px;
+}
+.view-header,
+.white,
+#aside .widget.white {
+	background-color: #FBFBFB;
+	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
+	margin-bottom: 18px;
+	padding: 18px 25px;
+	font-size: 15px;
+	border: 0 none;
+}
+.white p {
+	margin: 10px 0;
+}
+.view-trustees .field-name-field-quote {
+	font: italic 16px/18px Georgia, serif;
+}
+/*....sign up button....*/
 #block-block-21 {
 	float: left;
 	clear: none;
@@ -197,7 +247,6 @@ body.maintenance-page #main {
 	display: none;
 	visibility: hidden;
 }
-#block-block-4,
 .social-icons,
 .login, 
 .logout  {
@@ -240,26 +289,7 @@ body.maintenance-page #main {
 	height: 24px;
 	padding: 0;
 }
-.node-trustee .field-name-body, 
-.view-trustees .field-name-body {
-	clear: left;
-	padding-top: 10px;
-}
-.view-header,
-.white,
-#aside .widget.white {
-	background-color: #FBFBFB;
-	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
-	margin-bottom: 18px;
-	padding: 18px 25px;
-	font-size: 15px;
-}
-.white p {
-	margin: 10px 0;
-}
-.view-trustees .field-name-field-quote {
-	font: italic 16px/18px Georgia, serif;
-}
+
 #user-login-form label {
 	width: 90px;
 }
@@ -324,9 +354,14 @@ ul.primary li a {
 }
 /*....error messages....*/
 div.messages {
-	border: 4px solid; 
+	border: 1px solid; 
 }
-div.status, table tr.ok {
+div.messages ul {
+	list-style: none;
+	margin: 0;
+}
+div.status, table tr.ok,
+div.error, table tr.error {
 	background-color: #fff;
 }
 div.status, .ok {
@@ -334,4 +369,10 @@ div.status, .ok {
 }
 div.status {
 	border-color: #28972a;
+}
+div.error, .error {
+	color: #dc330b;
+}
+div.error {
+	border-color: #dc330b;
 }
