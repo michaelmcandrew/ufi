@@ -121,11 +121,6 @@ function webform_civicrm_node_delete($node) {
  */
 function webform_civicrm_theme() {
   $theme = array(
-    // Override webform-results-submissions.tpl.php
-    'webform_results_submissions' => array(
-      'render element' => 'element',
-      'template' => 'webform-results-submissions',
-    ),
     'webform_civicrm_options' => array(
       'render element' => 'element',
     ),
@@ -429,5 +424,24 @@ function webform_civicrm_storage($form, $form_state = NULL) {
   // Retrieve stored data
   elseif (is_numeric($form)) {
     return webform_civicrm_aval($storage, $form, array());
+  }
+}
+
+function webform_civicrm_preprocess_webform_results_submissions(&$variables){
+  if (count($variables['table']['#rows'])) {
+    $access = user_access('access CiviCRM');
+    $variables['table']['#header'][]=array('data'=>'Name');
+    foreach ($variables['table']['#rows'] as &$row) {
+      if (!empty($variables['submissions'][$row[0]]->civicrm)) {
+        if (($cid = $variables['submissions'][$row[0]]->civicrm['contact_id']) && ($name = $variables['submissions'][$row[0]]->civicrm['display_name'])) {
+          if ($access) {
+            $row[] = l($name, 'civicrm/contact/view', array('query' => array('reset' => 1, 'cid' => $cid[1]), 'alias' => TRUE));
+          }
+          else {
+            $row[] = $name;
+          }
+        }
+      }
+    }
   }
 }
