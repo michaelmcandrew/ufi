@@ -204,11 +204,17 @@ body.maintenance-page #main {
 	clear: none;
 	margin: 10px 0 0 0;
 }
-.field-type-link-field {
+.field-type-link-field,
+.field-type-file {
 	font-weight: bold;
 	margin: 12px 0;
 }
-.field-type-link-field a {
+.field-type-file .file-icon {
+	display: none;
+	visibility: hidden;
+}
+.field-type-link-field a,
+.field-type-file a {
 	border-bottom: 1px dotted #089BC3;
 }
 .form-item .description {
