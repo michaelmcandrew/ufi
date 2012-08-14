@@ -13,6 +13,10 @@
 
 /**
  * Root directory of Drupal installation.
+ * 
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
  */
 define('DRUPAL_ROOT', getcwd());
 
