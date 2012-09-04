@@ -81,7 +81,9 @@ label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12"]
 #crm-profile-block .crm-section .content {
 	margin-left: 0;
 }
-
+.yaselect-current:after {
+    background-image: none !important;
+}
 /*....links & buttons....*/
 .button {
 	border: 1px solid #CACACA;
