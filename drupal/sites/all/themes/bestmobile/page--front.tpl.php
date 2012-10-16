@@ -8,14 +8,6 @@ if (theme_get_setting('tm_value_theme_3') == 'left') {
   $said2 = 'beta';
 }
 ?>
-
-		<!-- Browser notification -->
-		<div class="browser-notification ie6">
-			<p>Your browser (Internet Explorer 7 or lower) is <strong>out of date</strong>. It has known <strong>security flaws</strong> and may <strong>not display all features</strong> of this and other websites. <a href="http://www.browser-update.org/update.html">Learn how to update your browser</a>.</p>
-			<div class="close">X</div>
-		</div>
-		<!-- // Browser notification -->
-
 		<!-- Top section -->
 		<header id="top">
 			<div class="container">
