@@ -14,6 +14,9 @@
 		<?php print render($content['links']); ?>
     </div>
   </section>
+  <!-- print the tags -->
+  <?php if ($field_tags = render($content['field_tags'])) { ?><ul class="meta"><li class="tags"><?php print $field_tags; ?>&nbsp;</li></ul><?php } ?>
+
   <!-- <? /* php if ($display_submitted): ?>
   <ul class="meta">
     <?php if ($node->comment and !($node->comment == 1 and !$node->comment_count)) { ?><li class="comments"><a href="<?php print url("node/$node->nid", array('fragment' => 'comment-form')) ?>"><?php print format_plural($node->comment_count, '1 Comment', '@count Comments') ?></a></li><?php } ?>
@@ -43,6 +46,9 @@
       ?>
     </div>
 	</section>
+	<!-- print the tags -->
+    <?php if ($field_tags = render($content['field_tags'])) { ?><ul class="meta"><li class="tags"><?php print $field_tags; ?>&nbsp;</li></ul><?php } ?>
+
   <!-- <? /* php if ($display_submitted): ?>
     <ul class="meta">
       <?php if ($node->comment and !($node->comment == 1 and !$node->comment_count)) { ?><li class="comments"><a href="<?php print url("node/$node->nid", array('fragment' => 'comment-form')) ?>"><?php print format_plural($node->comment_count, '1 Comment', '@count Comments') ?></a></li><?php } ?>

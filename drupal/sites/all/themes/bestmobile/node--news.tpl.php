@@ -2,12 +2,10 @@
 <article class="post<?php print ' '.strip_tags(render($content['field_icon'])); ?>">
   <section class="main clear">
     <h1 class="title"><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print $title; ?></a></h1>
-	<?php if ($display_submitted): ?>
-		<ul class="meta">
-			<li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
-		</ul>
+	<ul class="meta">
+		<li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
+	</ul>
 		<div class="content">
-	<?php endif; ?>
       <?php
         // We hide the comments and links now so that we can render them later.
         hide($content['comments']);
@@ -19,6 +17,9 @@
 		<?php print render($content['links']); ?>
     </div>
   </section>
+  <!-- print the tags -->
+  <?php if ($field_tags = render($content['field_tags'])) { ?><ul class="meta"><li class="tags"><?php print $field_tags; ?>&nbsp;</li></ul><?php } ?>
+
   <!-- <? /* php if ($display_submitted): ?>
   <ul class="meta">
     <?php if ($node->comment and !($node->comment == 1 and !$node->comment_count)) { ?><li class="comments"><a href="<?php print url("node/$node->nid", array('fragment' => 'comment-form')) ?>"><?php print format_plural($node->comment_count, '1 Comment', '@count Comments') ?></a></li><?php } ?>
@@ -52,6 +53,9 @@
       ?>
     </div>
 	</section>
+	<!-- print the tags -->
+    <?php if ($field_tags = render($content['field_tags'])) { ?><ul class="meta"><li class="tags"><?php print $field_tags; ?>&nbsp;</li></ul><?php } ?>
+
   <!-- <? /* php if ($display_submitted): ?>
     <ul class="meta">
       <?php if ($node->comment and !($node->comment == 1 and !$node->comment_count)) { ?><li class="comments"><a href="<?php print url("node/$node->nid", array('fragment' => 'comment-form')) ?>"><?php print format_plural($node->comment_count, '1 Comment', '@count Comments') ?></a></li><?php } ?>

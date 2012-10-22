@@ -134,7 +134,16 @@ label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12"]
 .post .content ol li {
 	margin: 4px 0;
 }
-
+.post .meta a {
+    color: #089BC3 !important;
+}
+.post .meta a {
+	display: inline !important;
+}
+.post .meta a:hover {
+    color: #089BC3 !important;
+	border-bottom: 1px dotted #089BC3;
+}
 /*....search....*/
 #block-search-form {
 	padding: 14px 0 0 130px;
