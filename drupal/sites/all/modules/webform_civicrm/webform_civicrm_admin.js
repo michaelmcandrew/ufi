@@ -137,7 +137,7 @@ var wfCiviAdmin = (function ($, D) {
       }
     });
   }
-  
+
   // Change employer options on-the-fly when contact types are altered
   function employerOptions() {
     var options = '';
@@ -148,10 +148,22 @@ var wfCiviAdmin = (function ($, D) {
         options += '<option value="'+c+'">'+name+'</option>';
       }
     });
-    $('select[id$=contact-employer-id] option').not('[value="0"],[value="create_civicrm_webform_element"]').remove();
-    $('select[id$=contact-employer-id]').append(options);
+    $('select[id$=contact-employer-id]').each(function() {
+      var val = $(this).val();
+      $('option', this).not('[value=0],[value=create_civicrm_webform_element]').remove();
+      if (options.length > 0) {
+        $(this).append(options).val(val).removeAttr('disabled').removeAttr('style');
+        $(this).parent().removeAttr('title');
+        $('option[value=0]', this).text(Drupal.t('- None -'));
+      }
+      else {
+        $(this).val(0).attr('disabled', 'disabled').css('color', 'gray');
+        $(this).parent().attr('title', Drupal.t('To create an employer relationship, first add an organization-type contact to the webform.'));
+        $('option[value=0]', this).text(Drupal.t('- first add an org -'));
+      }
+    });
   }
-  
+
   // Fetch current contact type settings
   function contactTypes() {
     var contacts = $('#edit-number-of-contacts').val();
@@ -186,6 +198,9 @@ var wfCiviAdmin = (function ($, D) {
 
   D.behaviors.webform_civicrmAdmin = {
     attach: function (context) {
+
+      employerOptions();
+
       // Summaries for vertical tabs
       $('fieldset[id^="edit-contact-"]', context).once('wf-civi').drupalSetSummary(function (context) {
         var label = $('select[name$="_contact_type"] option:selected', context).text();
@@ -204,7 +219,7 @@ var wfCiviAdmin = (function ($, D) {
           return CheckLength($('#edit-message', context).val());
         }
         else {
-          return D.t('- None -');
+          return Drupal.t('- None -');
         }
       });
       $('fieldset#edit-prefix', context).once('wf-civi').drupalSetSummary(function (context) {
@@ -216,7 +231,7 @@ var wfCiviAdmin = (function ($, D) {
           return CheckLength(label);
         }
         else {
-          return D.t('- None -');
+          return Drupal.t('- None -');
         }
       });
       $('fieldset#edit-event', context).once('wf-civi').drupalSetSummary(function (context) {
@@ -239,13 +254,13 @@ var wfCiviAdmin = (function ($, D) {
 
       $('#edit-nid', context).once('wf-civi').change(function() {
         if ($(this).is(':checked')) {
-          $('#webform-civicrm-configure-form .vertical-tabs, .form-item-number-of-contacts').removeAttr('style');
-          $('#webform-civicrm-configure-form .vertical-tabs-panes').removeClass('hidden');
+          $('#wf-crm-configure-form .vertical-tabs, .form-item-number-of-contacts').removeAttr('style');
+          $('#wf-crm-configure-form .vertical-tabs-panes').removeClass('hidden');
           $('[name="number_of_contacts"]').removeAttr('disabled');
         }
         else {
-          $('#webform-civicrm-configure-form .vertical-tabs, .form-item-number-of-contacts').css('opacity', '0.4');
-          $('#webform-civicrm-configure-form .vertical-tabs-panes').addClass('hidden');
+          $('#wf-crm-configure-form .vertical-tabs, .form-item-number-of-contacts').css('opacity', '0.4');
+          $('#wf-crm-configure-form .vertical-tabs-panes').addClass('hidden');
           $('[name="number_of_contacts"]').attr('disabled','disabled');
         }
       }).change();
@@ -264,7 +279,7 @@ var wfCiviAdmin = (function ($, D) {
       });
 
       $('#edit-number-of-contacts', context).once('wf-civi').change(function() {
-        $('#webform-civicrm-configure-form')[0].submit();
+        $('#wf-crm-configure-form')[0].submit();
       });
 
       $('select[name*="relationship_relationship_type_id"]', context).once('wf-civi').change(function() {
@@ -273,10 +288,12 @@ var wfCiviAdmin = (function ($, D) {
         $(':input[name*="'+name+'"][data-relationship-type]', context).each(function() {
           var rel = $(this).attr('data-relationship-type').split(',');
           if ($.inArray(val[0], rel) > -1) {
+            $(this).removeAttr('disabled');
             $(this).parent().removeAttr('style');
           }
           else {
             $(this).parent().css('display', 'none');
+            $(this).attr('disabled', 'disabled');
           }
         });
       }).change();
@@ -298,7 +315,7 @@ var wfCiviAdmin = (function ($, D) {
 
       // Loop through fieldsets and set icon in the tab.
       // We don't use the once() method because we need the i from the loop
-      $('#webform-civicrm-configure-form fieldset.vertical-tabs-pane').each(function(i) {
+      $('#wf-crm-configure-form fieldset.vertical-tabs-pane').each(function(i) {
         if (!$(this).hasClass('wf-civi-icon-processed')) {
           var clas = $(this).attr('class').split(' ');
           var name = '';
@@ -308,7 +325,7 @@ var wfCiviAdmin = (function ($, D) {
               if (cl[0] == 'contact') {
                 name = 'name="' + (i + 1) + '_contact_type"'
               }
-              $('#webform-civicrm-configure-form .vertical-tab-button a').eq(i).prepend('<span class="civi-icon '+cl[2]+'" '+name+'"> </span>');
+              $('#wf-crm-configure-form .vertical-tab-button a').eq(i).prepend('<span class="civi-icon '+cl[2]+'" '+name+'"> </span>');
               continue;
             }
           }
@@ -318,9 +335,7 @@ var wfCiviAdmin = (function ($, D) {
 
       // Respond to contact type changing
       $('select[name$="_contact_type"]').once('contact-type').change(function() {
-        // Change icon
-        $('#webform-civicrm-configure-form .vertical-tab-button span[name="'+$(this).attr('name')+'"]').removeClass().addClass('civi-icon '+$(this).val());
-        // Change employer options
+        $('#wf-crm-configure-form .vertical-tab-button span[name="'+$(this).attr('name')+'"]').removeClass().addClass('civi-icon '+$(this).val());
         employerOptions();
       });
     }

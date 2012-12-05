@@ -51,28 +51,6 @@ img.print-logo {border: 0;}
   border: medium dotted blue;
   padding: 1em;
 }
-input#edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-1,
-input#edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-7,
-input#edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12 {
-	display: none;
-	visibility: hidden;
-}
 .print-source_url {font-size: small;}
 .print-links {font-size: small;}
 .print-footer {text-align: center;}
-label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-1"],
-label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-7"],
-label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12"] {
-	font-weight: bold;
-}
-label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-7"],
-label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12"] {
-	padding-top: 10px;
-	display: block;
-}
-fieldset {
-	border: 0 none;
-}
-.webform-component { 
-	page-break-inside: avoid;
-}
