@@ -89,6 +89,7 @@ if (!isset($page['content']['system_main']['nodes'][$arg1]['#node']->type)) $pag
                 (arg(0) == 'reports') or
                 (arg(0) == 'videos') or
 				(arg(0) == 'trustees') or 
+				(arg(0) == 'projects') or 
 				(arg(0) == 'home')
             ) { ?>
             <?php if ($title and (
@@ -98,6 +99,7 @@ if (!isset($page['content']['system_main']['nodes'][$arg1]['#node']->type)) $pag
                 (arg(0) == 'reports') or
 				(arg(0) == 'videos') or
 				(arg(0) == 'trustees') or
+				(arg(0) == 'projects') or 
 				(arg(0) == 'home')
               )) { ?>
               <article class="post default">

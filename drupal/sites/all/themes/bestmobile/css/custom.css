@@ -13,7 +13,42 @@
 div.read-more {
 	margin-top: 6px;
 }
-
+/*body.node-type-project #content.alpha {
+	width: 940px;
+}*/
+body.node-type-project .post {
+	width: auto;
+	float: left;
+	margin-bottom: 0;
+}
+body.node-type-project .post.project-text {
+	width: 700px;
+}
+body.node-type-project .post .title {
+	font-size: 28px;
+	padding-left: 42px;
+}
+.node-project {
+	overflow: hidden;
+}
+.view-project-news .post {
+	background-color: transparent;
+	box-shadow: 0 0 0 0;
+	width: auto;
+}
+.view-project-news .post .main {
+	padding: 18px 0;
+}
+#block-views-project-news-block {
+	width: 664px;
+	padding: 18px;
+	margin-top: 16px;
+	background-color: #FBFBFB;
+	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+body.node-type-project #aside {
+	padding-top: 200px;
+}
 /*....forms....*/
 .webform-component-fieldset {
 	padding-bottom: 20px;
@@ -134,6 +169,9 @@ label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12"]
 .post .content ol li {
 	margin: 4px 0;
 }
+.post .meta {
+	padding: 8px 0 0 0;
+}
 .post .meta a {
     color: #089BC3 !important;
 }
@@ -155,6 +193,7 @@ label[for="edit-submitted-project-investment-civicrm-1-case-1-cg3-custom-20-12"]
 /*....add this widget....*/
 .field-name-field-add-this {
 	clear: both;
+	margin-top: 6px;
 }
 .node-type-page .field-name-field-add-this {
 	display: none;
@@ -220,6 +259,9 @@ body.maintenance-page #main {
 	font-weight: bold;
 	margin: 12px 0;
 }
+#project-links .field-type-link-field {
+	margin: 0;
+}
 .field-type-file .file-icon {
 	display: none;
 	visibility: hidden;
@@ -251,6 +293,19 @@ body.maintenance-page #main {
 }
 .view-trustees .field-name-field-quote {
 	font: italic 16px/18px Georgia, serif;
+}
+#project-links {
+	width: 220px;
+	position: absolute;
+	right: 0;
+	word-wrap: break-word;
+}
+#project-links .field-label {
+	font: normal 28px/28px Rokkitt, "Times New Roman";
+	color: #3B3B3B;
+}
+#project-links .link-item  {
+	margin-bottom: 8px;
 }
 /*....sign up button....*/
 #block-block-21 {
