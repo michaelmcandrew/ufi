@@ -1,7 +1,7 @@
 <?php if (!$page) { ?>
 <article class="post">
   <section class="main clear">
-    <h1 class="title"><?php print $title; ?></h1>
+    <h1 class="title"><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print $title; ?></a></h1>
 	<ul class="meta">
 		<li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
 	</ul>
@@ -26,7 +26,7 @@
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 <article class="post">
   <section class="main clear">
-    <h1 class="title"><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print $title; ?></a></h1>
+    <h1 class="title"><?php print $title; ?></h1>
 	<?php if ($display_submitted): ?>
 		<ul class="meta">
 			<li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>

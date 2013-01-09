@@ -13,20 +13,8 @@
 div.read-more {
 	margin-top: 6px;
 }
-/*body.node-type-project #content.alpha {
-	width: 940px;
-}*/
-body.node-type-project .post {
-	width: auto;
-	float: left;
-	margin-bottom: 0;
-}
-body.node-type-project .post.project-text {
-	width: 700px;
-}
-body.node-type-project .post .title {
-	font-size: 28px;
-	padding-left: 42px;
+body.node-type-project h1 {
+	font: 38px/38px Rokkitt,"Times New Roman";
 }
 .node-project {
 	overflow: hidden;
@@ -45,9 +33,6 @@ body.node-type-project .post .title {
 	margin-top: 16px;
 	background-color: #FBFBFB;
 	box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
-}
-body.node-type-project #aside {
-	padding-top: 200px;
 }
 /*....forms....*/
 .webform-component-fieldset {
@@ -239,6 +224,10 @@ body.maintenance-page #main {
 }
 .block h1 {
 	font: normal 28px/28px Rokkitt, "Times New Roman";
+}
+.widget-twitter li, 
+.widget-twitter .button {
+	margin-top: 10px;
 }
 .field-name-field-intro {
 	font-style: italic;

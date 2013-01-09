@@ -1,13 +1,7 @@
 <?php if (!$page) { ?>
-	<div id="project-links"><?php print render($content['field_project_links']); ?></div>
-	
-	<div class="widget-twitter" data-username="<?php print ($node->field_twitter_username); ?>" data-count="4" data-retweets="true">
-		<div class="tweets"></div>
-		<div style="color:green;"><?php print render($content['field_twitter_username']); ?></div>
-	</div>
-<article class="post project-text">
+<article class="post<?php print ' '.strip_tags(render($content['field_icon'])); ?>">
   <section class="main clear">
-    <h1><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print $title; ?></a></h1>
+    <h1 class="title"><a href="<?php print $node_url; ?>" title="<?php print $title; ?>"><?php print $title; ?></a></h1>
     <div class="content">
       <?php
         // We hide the comments and links now so that we can render them later.
@@ -23,22 +17,23 @@
   <!-- print the tags -->
   <?php if ($field_tags = render($content['field_tags'])) { ?><ul class="meta"><li class="tags"><?php print $field_tags; ?>&nbsp;</li></ul><?php } ?>
 
-
+  <!-- <? /* php if ($display_submitted): ?>
+  <ul class="meta">
+    <?php if ($node->comment and !($node->comment == 1 and !$node->comment_count)) { ?><li class="comments"><a href="<?php print url("node/$node->nid", array('fragment' => 'comment-form')) ?>"><?php print format_plural($node->comment_count, '1 Comment', '@count Comments') ?></a></li><?php } ?>
+    <li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
+	<li class="author"><?php print($name); ?></li>
+    <?php if ($field_category = render($content['field_category'])) { ?><li class="category"><?php print $field_category; ?>&nbsp;</li><?php } ?>
+    <?php if ($field_tags = render($content['field_tags'])) { ?><li class="tags"><?php print $field_tags; ?>&nbsp;</li><?php } ?>
+    <?php /* ?><li class="link"><?php print render($content['links']); ?></li><?php */ ?>
+  </ul>
+  <?//php endif; ?> -->
 </article>
 <?php } else { ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-	
-	<div id="project-links"><?php print render($content['field_project_links']); ?></div>
-	
-	<!-- <div class="widget-twitter" data-username="<?php print ($node->field_twitter_username); ?>" data-count="4" data-retweets="true">
-		<div class="tweets"></div>
-		<div style="color:green;"><?//php print render($content['field_twitter_username']); ?></div>
-	</div> -->
-	
-<article class="post project-text">
+<article class="post<?php print ' '.strip_tags(render($content['field_icon'])); ?>">
   <section class="main clear">
 	<?php print render($title_prefix); ?>
-    <h1><?php print $title; ?></h1>
+    <h1 class=""><?php print $title; ?></h1>
 	<?php print render($title_suffix); ?>
     <div class="content">
       <?php
@@ -47,14 +42,23 @@
         hide($content['links']);
         hide($content['field_tags']);
         hide($content['field_category']);
-		print render($content);
+        print render($content);
       ?>
     </div>
 	</section>
 	<!-- print the tags -->
     <?php if ($field_tags = render($content['field_tags'])) { ?><ul class="meta"><li class="tags"><?php print $field_tags; ?>&nbsp;</li></ul><?php } ?>
 
-
+  <!-- <? /* php if ($display_submitted): ?>
+    <ul class="meta">
+      <?php if ($node->comment and !($node->comment == 1 and !$node->comment_count)) { ?><li class="comments"><a href="<?php print url("node/$node->nid", array('fragment' => 'comment-form')) ?>"><?php print format_plural($node->comment_count, '1 Comment', '@count Comments') ?></a></li><?php } ?>
+      <li class="date"><?php print format_date($node->created,'custom','M j Y'); ?></li>
+  	<li class="author"><?php print($name); ?></li>
+      <?php if ($field_category = render($content['field_category'])) { ?><li class="category"><?php print $field_category; ?>&nbsp;</li><?php } ?>
+      <?php if ($field_tags = render($content['field_tags'])) { ?><li class="tags"><?php print $field_tags; ?>&nbsp;</li><?php } ?>
+      <?php /* ?><li class="link"><?php print render($content['links']); ?></li><?php */ ?>
+    </ul>
+    <?//php endif; ?> -->
   <?php if ($links = render($content['links'])): ?>
     <div class="social clear"><?php print $links; ?></div>
   <?php endif; ?>
